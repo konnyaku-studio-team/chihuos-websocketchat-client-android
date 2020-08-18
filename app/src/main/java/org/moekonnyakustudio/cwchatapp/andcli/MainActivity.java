@@ -30,16 +30,16 @@ public class MainActivity extends AppCompatActivity {
                 String HttpStatus=String.valueOf(handshakeData.getHttpStatus());
                 Log.i("WSConnect", HttpStatus);
             }
-
             @Override
             public void onMessage(String message) {
 
             }
-
             @Override
             public void onClose(int code, String reason, boolean remote) {
+                Looper.prepare();
+                Toast.makeText(MainActivity.this,"草，服务器关闭了！",Toast.LENGTH_LONG).show();
+                Looper.loop();
             }
-
             @Override
             public void onError(Exception ex) {
                 Looper.prepare();

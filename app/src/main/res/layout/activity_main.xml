@@ -5,30 +5,63 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:id="@+id/LinearLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left">
         <EditText
             android:id="@+id/wsServerInsert"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="299dp"
+            android:layout_height="56dp"
             android:ems="10"
-            android:inputType="text"
             android:hint="请输入服务器地址（以ws://开头）"
-            tools:layout_editor_absoluteX="125dp"
-            tools:layout_editor_absoluteY="474dp" />
+            android:inputType="text" />
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="连接服务器！"
             android:onClick="ClickOn"
-            tools:layout_editor_absoluteX="156dp"
-            tools:layout_editor_absoluteY="413dp" />
+            android:text="连接服务器！" />
+    </LinearLayout>
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left">
+    <EditText
+        android:id="@+id/wsServerMessage"
+        android:layout_width="274dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="请输入你要发送的信息"
+        android:inputType="text"
+    />
 
-
+    <Button
+        android:id="@+id/CommitMessage"
+        android:layout_width="110dp"
+        android:layout_height="42dp"
+        android:onClick="ClickOn"
+        android:text="发送信息！"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="left">
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="这里显示接收和发送的信息：" />
+    </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
